@@ -357,3 +357,23 @@ footer{background:#0b0b0a;color:#f1efe9;padding:0 35px 28px}.footer-big{font-siz
     grid-template-columns:1fr;
   }
 }
+
+
+/* Footer official wordmark */
+.footer-wordmark{
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-start;
+}
+.footer-wordmark-img{
+  display:block;
+  width:min(98%, 1500px);
+  height:auto;
+  object-fit:contain;
+  filter:invert(1);
+}
+@media(max-width:600px){
+  .footer-wordmark-img{
+    width:100%;
+  }
+}

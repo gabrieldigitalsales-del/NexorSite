@@ -20,3 +20,7 @@ Nenhuma outra parte do site foi alterada.
 
 ## Ajuste final
 A wordmark oficial NEXOR. também foi aplicada no hero principal gigante do topo.
+
+
+## Ajuste adicional
+O número do WhatsApp e o nome do Instagram foram substituídos por dois mini cards com ícones, mantendo o restante do site igual.

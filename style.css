@@ -228,3 +228,67 @@ footer{background:#0b0b0a;color:#f1efe9;padding:0 35px 28px}.footer-big{font-siz
     min-width:0;
   }
 }
+
+
+/* NEXOR official wordmark */
+.logo-wordmark{
+  display:flex;
+  align-items:center;
+  width:max-content;
+}
+.logo-wordmark-img{
+  display:block;
+  width:138px;
+  height:auto;
+  object-fit:contain;
+  filter:invert(1);
+}
+.loader-brand-logo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.loader-brand-logo img{
+  width:min(64vw,760px);
+  height:auto;
+  display:block;
+  filter:invert(1);
+}
+@media(max-width:600px){
+  .logo-wordmark-img{
+    width:118px;
+  }
+  .loader-brand-logo img{
+    width:78vw;
+  }
+}
+
+
+/* Hero wordmark oficial NEXOR. */
+.hero-wordmark{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-left:0;
+  width:100%;
+}
+.hero-wordmark-img{
+  display:block;
+  width:min(96vw, 1550px);
+  height:auto;
+  object-fit:contain;
+  filter:invert(1);
+}
+@media(max-width:900px){
+  .hero-wordmark-img{
+    width:96vw;
+  }
+}
+@media(max-width:600px){
+  .hero-wordmark{
+    margin-top:50px;
+  }
+  .hero-wordmark-img{
+    width:95vw;
+  }
+}

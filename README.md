@@ -11,3 +11,12 @@ Na Vercel:
 - Root Directory: pasta onde está index.html
 
 Se o projeto antigo continuar mostrando Next.js, crie um NOVO projeto na Vercel usando esta pasta.
+
+
+## Logo oficial
+Esta versão usa a logo oficial NEXOR. (wordmark preto com ponto final), aplicada no cabeçalho, carregamento inicial e favicon.
+Nenhuma outra parte do site foi alterada.
+
+
+## Ajuste final
+A wordmark oficial NEXOR. também foi aplicada no hero principal gigante do topo.

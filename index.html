@@ -4,9 +4,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#090909">
-  <meta name="description" content="NEXOR Digital — Social Media, Sites, Sistemas e Experiências Digitais.">
-  <title>NEXOR — Digital Studio</title>
-  <link rel="icon" href="/assets/favicon-nexor.png" type="image/png">
+  <meta name="description" content="NEXOR Digital — Social Media, Sites, Sistemas, Automação, IA e experiências digitais para marcas que querem crescer.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="NEXOR Digital">
+  <link rel="canonical" href="/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NEXOR Digital | Sites, Sistemas, Social Media e Tecnologia">
+  <meta property="og:description" content="Criação, conteúdo e tecnologia para marcas que querem vender melhor, parecer maiores e operar de forma mais inteligente.">
+  <meta property="og:image" content="/assets/nexor-wordmark-oficial.png">
+  <meta property="og:site_name" content="NEXOR Digital">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NEXOR Digital | Sites, Sistemas, Social Media e Tecnologia">
+  <meta name="twitter:description" content="Criação, conteúdo e tecnologia para marcas que querem vender melhor, parecer maiores e operar de forma mais inteligente.">
+  <meta name="twitter:image" content="/assets/nexor-wordmark-oficial.png">
+  <title>NEXOR Digital | Sites, Sistemas, Social Media e Tecnologia</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/nexor-wordmark-oficial.png" as="image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NEXOR Digital",
+    "description": "Social Media, Sites, Sistemas, Automação, IA e experiências digitais.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sete Lagoas",
+      "addressRegion": "MG",
+      "addressCountry": "BR"
+    },
+    "sameAs": ["https://instagram.com/nexor_digital_"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -29,14 +58,14 @@
 
     <div class="header-center">SETOR CRIATIVO + TECNOLOGIA</div>
 
-    <button class="menu-trigger magnetic" id="menuTrigger">
+    <button class="menu-trigger magnetic" id="menuTrigger" type="button" aria-expanded="false" aria-controls="menuPanel">
       <span>MENU</span>
       <i></i>
     </button>
   </header>
 
-  <aside class="menu-panel" id="menuPanel">
-    <div class="menu-close" id="menuClose">FECHAR</div>
+  <aside class="menu-panel" id="menuPanel" aria-hidden="true">
+    <button class="menu-close" id="menuClose" type="button" aria-label="Fechar menu">FECHAR</button>
     <nav>
       <a href="#work">Projetos <span>01</span></a>
       <a href="#services">Serviços <span>02</span></a>
@@ -60,7 +89,7 @@
       </div>
 
       <div class="hero-word hero-wordmark">
-        <img src="assets/nexor-wordmark-oficial.png" alt="NEXOR." class="hero-wordmark-img">
+        <img src="assets/nexor-wordmark-oficial.png" alt="NEXOR." class="hero-wordmark-img" fetchpriority="high">
       </div>
 
       <div class="hero-lower">
@@ -308,7 +337,7 @@
           </button>
           
           <div class="contact-mini-cards">
-            <a class="contact-mini-card" href="https://wa.me/5531998261608" target="_blank" rel="noreferrer" aria-label="WhatsApp da NEXOR">
+            <a class="contact-mini-card" id="whatsappLink" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da NEXOR">
               <span class="contact-mini-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M20 11.9c0 4.6-3.8 8.4-8.4 8.4-1.5 0-2.8-.4-4.1-1L4 20l.8-3.3c-.8-1.3-1.2-3-1.2-4.7C3.6 7.4 7.4 3.6 12 3.6c4.6 0 8 3.7 8 8.3Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
@@ -322,7 +351,7 @@
               <b>↗</b>
             </a>
 
-            <a class="contact-mini-card" href="https://instagram.com/nexor_digital_" target="_blank" rel="noreferrer" aria-label="Instagram da NEXOR">
+            <a class="contact-mini-card" id="instagramLink" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram da NEXOR">
               <span class="contact-mini-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
                   <rect x="3.3" y="3.3" width="17.4" height="17.4" rx="5" stroke="currentColor" stroke-width="1.7"/>
@@ -343,7 +372,11 @@
   </main>
 
   <footer>
-    <div class="footer-big footer-wordmark"><img src="assets/nexor-wordmark-oficial.png" alt="NEXOR." class="footer-wordmark-img"></div>
+    <div class="footer-big footer-wordmark"><img src="assets/nexor-wordmark-oficial.png" alt="NEXOR." class="footer-wordmark-img" loading="lazy"></div>
+    <div class="footer-legal">
+      <a href="/privacidade.html">Privacidade</a>
+      <a href="/termos.html">Termos</a>
+    </div>
     <div class="footer-row">
       <span>DIGITAL STUDIO</span>
       <span>SET. LAGOAS / MG</span>

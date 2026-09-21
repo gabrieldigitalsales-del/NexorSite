@@ -30,9 +30,27 @@ document.querySelectorAll("a,button,.project").forEach(el=>{
 });
 
 const menu = document.getElementById("menuPanel");
-document.getElementById("menuTrigger").onclick = ()=>menu.classList.add("open");
-document.getElementById("menuClose").onclick = ()=>menu.classList.remove("open");
-menu.querySelectorAll("a").forEach(a=>a.onclick=()=>menu.classList.remove("open"));
+const menuTrigger = document.getElementById("menuTrigger");
+const menuClose = document.getElementById("menuClose");
+
+function openMenu(){
+  menu.classList.add("open");
+  menu.setAttribute("aria-hidden","false");
+  menuTrigger.setAttribute("aria-expanded","true");
+  menuClose.focus();
+}
+function closeMenu(){
+  menu.classList.remove("open");
+  menu.setAttribute("aria-hidden","true");
+  menuTrigger.setAttribute("aria-expanded","false");
+  menuTrigger.focus();
+}
+menuTrigger.addEventListener("click",openMenu);
+menuClose.addEventListener("click",closeMenu);
+menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape" && menu.classList.contains("open")) closeMenu();
+});
 
 document.querySelectorAll(".magnetic").forEach(el=>{
   el.addEventListener("mousemove",e=>{
@@ -45,16 +63,29 @@ document.querySelectorAll(".magnetic").forEach(el=>{
 });
 
 const heroLetters=[...document.querySelectorAll(".hero-word span")];
-window.addEventListener("pointermove",e=>{
-  if(innerWidth<900)return;
-  const nx=e.clientX/innerWidth-.5;
-  heroLetters.forEach((l,i)=>l.style.transform=`translateY(${nx*(i-2)*8}px)`);
-});
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!reduceMotion){
+  window.addEventListener("pointermove",e=>{
+    if(innerWidth<900)return;
+    const nx=e.clientX/innerWidth-.5;
+    heroLetters.forEach((l,i)=>l.style.transform=`translateY(${nx*(i-2)*8}px)`);
+  });
+}
+
+const whatsappLink = document.getElementById("whatsappLink");
+const instagramLink = document.getElementById("instagramLink");
+if(whatsappLink) whatsappLink.href = `https://wa.me/${CONFIG.whatsappNumber}`;
+if(instagramLink) instagramLink.href = `https://instagram.com/${CONFIG.instagram}`;
+
+function trackConversion(name, detail={}){
+  window.dispatchEvent(new CustomEvent("nexor:conversion",{detail:{name,...detail}}));
+}
 
 document.getElementById("contactBtn").addEventListener("click",()=>{
   const service=document.getElementById("serviceSelect").value;
   const msg=`Olá! Vim pelo site da NEXOR e gostaria de falar sobre ${service}.`;
-  window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`,"_blank");
+  trackConversion("contact_whatsapp",{service});
+  window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`,"_blank","noopener,noreferrer");
 });
 
 /* Compact project configurator */
@@ -200,3 +231,7 @@ document.querySelectorAll(".service-row").forEach(row=>{
 });
 
 updateCompact();
+
+
+if(whatsappLink) whatsappLink.addEventListener("click",()=>trackConversion("whatsapp_card"));
+if(instagramLink) instagramLink.addEventListener("click",()=>trackConversion("instagram_card"));

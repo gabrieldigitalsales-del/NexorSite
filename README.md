@@ -1,30 +1,16 @@
-# NEXOR — Vercel Static Ready
-
-IMPORTANTE:
-Este projeto NÃO usa Next.js, Vite, npm ou build.
-
-Na Vercel:
-- Framework Preset: Other
-- Build Command: deixar vazio / desativado
-- Output Directory: deixar vazio
-- Install Command: deixar vazio
-- Root Directory: pasta onde está index.html
-
-Se o projeto antigo continuar mostrando Next.js, crie um NOVO projeto na Vercel usando esta pasta.
+NEXOR Digital — apresentação comercial revisada em 03/11/2026.
+Abra index.html localmente ou publique a pasta em uma hospedagem estática (ex.: Vercel).
+WhatsApp preservado: 5531998261608. Instagram: nexor_digital_.
+Sem dependências de build. Fontes Google opcionais; fontes locais de fallback disponíveis.
 
 
-## Logo oficial
-Esta versão usa a logo oficial NEXOR. (wordmark preto com ponto final), aplicada no cabeçalho, carregamento inicial e favicon.
-Nenhuma outra parte do site foi alterada.
+## Revisão visual
+- Retirados índices decorativos 01/02 etc. das seções, fotos, etapas e serviços.
+- Marca NEXOR realçada em fundo preto (rodapé e tela inicial).
+- Tela de carregamento restaurada com wordmark NEXOR, barra champagne e saída automática acessível.
 
-
-## Ajuste final
-A wordmark oficial NEXOR. também foi aplicada no hero principal gigante do topo.
-
-
-## Ajuste adicional
-O número do WhatsApp e o nome do Instagram foram substituídos por dois mini cards com ícones, mantendo o restante do site igual.
-
-
-## Ajuste final
-A logo oficial NEXOR. também foi aplicada na área grande do footer.
+## Interações desta versão
+- Cards de processo em carrossel contínuo, arrastáveis com mouse/toque e navegáveis pelas setas do teclado.
+- Hover sutil nos cards de pacotes, serviços e sistemas.
+- Entrada suave das seções, respeitando preferência por movimento reduzido.
+- A tela de carregamento NEXOR permanece ativa.

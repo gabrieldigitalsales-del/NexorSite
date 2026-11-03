@@ -1,391 +1,59 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#090909">
-  <meta name="description" content="NEXOR Digital — Social Media, Sites, Sistemas, Automação, IA e experiências digitais para marcas que querem crescer.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="author" content="NEXOR Digital">
-  <link rel="canonical" href="https://nexordigital.vercel.app/">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="NEXOR Digital | Sites, Sistemas, Social Media e Tecnologia">
-  <meta property="og:description" content="Criação, conteúdo e tecnologia para marcas que querem vender melhor, parecer maiores e operar de forma mais inteligente.">
-  <meta property="og:image" content="https://nexordigital.vercel.app/assets/nexor-wordmark-oficial.png">
-  <meta property="og:url" content="https://nexordigital.vercel.app/">
-  <meta property="og:site_name" content="NEXOR Digital">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NEXOR Digital | Sites, Sistemas, Social Media e Tecnologia">
-  <meta name="twitter:description" content="Criação, conteúdo e tecnologia para marcas que querem vender melhor, parecer maiores e operar de forma mais inteligente.">
-  <meta name="twitter:image" content="https://nexordigital.vercel.app/assets/nexor-wordmark-oficial.png">
-  <title>NEXOR Digital | Sites, Sistemas, Social Media e Tecnologia</title>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="/assets/nexor-wordmark-oficial.png" as="image">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "NEXOR Digital",
-    "description": "Social Media, Sites, Sistemas, Automação, IA e experiências digitais.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Sete Lagoas",
-      "addressRegion": "MG",
-      "addressCountry": "BR"
-    },
-    "url": "https://nexordigital.vercel.app/",
-    "sameAs": ["https://instagram.com/nexor_digital_"]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="NEXOR Digital: conteúdo, gravação, edição, fotografia, biosites e sistemas personalizados. Apresentação comercial 2026.">
+<title>NEXOR Digital | Apresentação Comercial 2026</title>
+<link rel="icon" href="/assets/favicon-nexor.png?v=2" type="image/png">
+<link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="loader" id="loader">
-    <div class="loader-brand loader-brand-logo"><img src="assets/nexor-wordmark-oficial.png" alt="NEXOR."></div>
-    <div class="loader-line"><i></i></div>
-    <div class="loader-count" id="loaderCount">00</div>
-  </div>
+<div class="nexor-loader" id="nexorLoader" role="status" aria-label="Carregando a apresentação NEXOR" aria-live="polite">
+  <div class="nexor-loader-center"><img src="assets/nexor-wordmark-oficial.png" alt="NEXOR." width="1203" height="288"><p>CRIATIVIDADE & TECNOLOGIA</p></div>
+  <div class="nexor-loader-track" aria-hidden="true"><span></span></div>
+</div>
 
-  <div class="cursor" id="cursor"></div>
-  <div class="grain"></div>
-
-  <header class="header">
-    <a class="logo logo-wordmark" href="#top" aria-label="NEXOR Digital">
-      <img src="assets/nexor-wordmark-oficial.png" alt="NEXOR." class="logo-wordmark-img">
-    </a>
-
-    <div class="header-center">SETOR CRIATIVO + TECNOLOGIA</div>
-
-    <button class="menu-trigger magnetic" id="menuTrigger" type="button" aria-expanded="false" aria-controls="menuPanel">
-      <span>MENU</span>
-      <i></i>
-    </button>
-  </header>
-
-  <aside class="menu-panel" id="menuPanel" aria-hidden="true">
-    <button class="menu-close" id="menuClose" type="button" aria-label="Fechar menu">FECHAR</button>
-    <nav>
-      <a href="#work">Projetos <span>01</span></a>
-      <a href="#services">Serviços <span>02</span></a>
-      <a href="#about">Studio <span>03</span></a>
-      <a href="#orcamento">Orçamento <span>04</span></a>
-      <a href="#contact">Contato <span>05</span></a>
-    </nav>
-    <div class="menu-meta">
-      <span>Social Media</span>
-      <span>Sites</span>
-      <span>Sistemas</span>
-      <span>Vídeo</span>
-      <span>IA</span>
-    </div>
-  </aside>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-status">
-        <i></i> DISPONÍVEL PARA NOVOS PROJETOS
-      </div>
-
-      <div class="hero-word hero-wordmark">
-        <img src="assets/nexor-wordmark-oficial.png" alt="NEXOR." class="hero-wordmark-img" fetchpriority="high">
-      </div>
-
-      <div class="hero-lower">
-        <div class="hero-copy">
-          <p>Não fazemos “mais um site”.<br>Construímos presença digital.</p>
-        </div>
-
-        <div class="hero-statement">
-          <h1>Marcas que parecem<br><em>maiores do que ontem.</em></h1>
-        </div>
-
-        <a class="circle-cta magnetic" href="#work">
-          <span>VER<br>TRABALHOS</span>
-          <b>↘</b>
-        </a>
-      </div>
-
-      <div class="hero-index">
-        <span>EST. 2026</span>
-        <span>SET. LAGOAS / MG</span>
-        <span>SCROLL ↓</span>
-      </div>
-    </section>
-
-    <section class="ticker">
-      <div class="ticker-track">
-        <span>SOCIAL MEDIA</span><i></i><span>SITES</span><i></i><span>SISTEMAS</span><i></i><span>FILMMAKER</span><i></i><span>STORYMAKER</span><i></i><span>IA</span><i></i>
-        <span>SOCIAL MEDIA</span><i></i><span>SITES</span><i></i><span>SISTEMAS</span><i></i><span>FILMMAKER</span><i></i><span>STORYMAKER</span><i></i><span>IA</span><i></i>
-      </div>
-    </section>
-
-    <section class="intro" id="about">
-      <div class="eyebrow">/ SOBRE A NEXOR</div>
-      <div class="intro-grid">
-        <h2>Design chama atenção.<br><span>Estratégia mantém.</span><br>Tecnologia escala.</h2>
-        <div class="intro-aside">
-          <p>A NEXOR une criação, conteúdo e desenvolvimento para marcas que precisam vender melhor, parecer maiores e operar de forma mais inteligente.</p>
-          <a href="#services" class="line-link">Conhecer o studio <span>↗</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="work" id="work">
-      <div class="section-head">
-        <span>/ PROJETOS & CAPACIDADES</span>
-        <span>SELEÇÃO 2026</span>
-      </div>
-
-      <article class="project project-light">
-        <div class="project-number">01</div>
-        <div class="project-copy">
-          <p>SOCIAL MEDIA / POSICIONAMENTO</p>
-          <h3>Conteúdo que<br><em>cria desejo.</em></h3>
-          <a href="#orcamento" class="project-link">Quero esse nível ↗</a>
-        </div>
-        <div class="project-art art-social">
-          <div class="poster poster-one">
-            <span>NEXOR SOCIAL</span>
-            <strong>MARCA<br>É PERCEPÇÃO.</strong>
-            <small>STRATEGY / CONTENT / DIRECTION</small>
-          </div>
-          <div class="poster poster-two">
-            <span>02 / 04</span>
-            <strong>NOT<br>JUST<br>POSTS.</strong>
-          </div>
-        </div>
-      </article>
-
-      <article class="project project-dark">
-        <div class="project-number">02</div>
-        <div class="project-copy">
-          <p>WEB / DIGITAL EXPERIENCE</p>
-          <h3>Sites que parecem<br><em>produto.</em></h3>
-          <a href="#orcamento" class="project-link">Quero meu site ↗</a>
-        </div>
-        <div class="project-art art-web">
-          <div class="web-window">
-            <div class="web-top">
-              <span>NEXOR / EXP_02</span>
-              <span>MENU +</span>
-            </div>
-            <div class="web-center">
-              <p>DIGITAL EXPERIENCE</p>
-              <h4>Beautiful<br><em>converts.</em></h4>
-            </div>
-            <div class="web-orbit"></div>
-            <div class="web-footer">DESIGN / PERFORMANCE / CONVERSION</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="project project-acid">
-        <div class="project-number">03</div>
-        <div class="project-copy">
-          <p>SISTEMAS / IA / AUTOMAÇÃO</p>
-          <h3>Tecnologia que<br><em>faz sentido.</em></h3>
-          <a href="#orcamento" class="project-link">Tenho uma ideia ↗</a>
-        </div>
-        <div class="project-art art-system">
-          <div class="terminal">
-            <div class="terminal-top">
-              <span>NXR.OS</span>
-              <span>ONLINE</span>
-            </div>
-            <div class="metric">
-              <span>PROCESS FLOW</span>
-              <strong>98.4</strong><b>%</b>
-            </div>
-            <div class="graph">
-              <i style="height:22%"></i><i style="height:37%"></i><i style="height:49%"></i><i style="height:66%"></i><i style="height:80%"></i><i style="height:96%"></i>
-            </div>
-            <div class="terminal-bottom">AUTOMATE / CONNECT / SCALE</div>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <section class="services" id="services">
-      <div class="eyebrow">/ O QUE ENTREGAMOS</div>
-      <div class="services-list">
-        <a href="#orcamento" class="service-row">
-          <span>01</span>
-          <h3>Social Media</h3>
-          <p>Estratégia, direção criativa, Reels, carrosséis, rotina e posicionamento.</p>
-          <b>↗</b>
-        </a>
-        <a href="#orcamento" class="service-row">
-          <span>02</span>
-          <h3>Sites</h3>
-          <p>Landing pages, sites institucionais e experiências digitais premium.</p>
-          <b>↗</b>
-        </a>
-        <a href="#orcamento" class="service-row">
-          <span>03</span>
-          <h3>Sistemas</h3>
-          <p>Painéis, ferramentas internas, automações, integrações e IA aplicada.</p>
-          <b>↗</b>
-        </a>
-        <a href="#orcamento" class="service-row">
-          <span>04</span>
-          <h3>Filmmaker</h3>
-          <p>Captação, direção, edição e conteúdo audiovisual para marcas e pessoas.</p>
-          <b>↗</b>
-        </a>
-        <a href="#orcamento" class="service-row">
-          <span>05</span>
-          <h3>Storymaker</h3>
-          <p>Cobertura e conteúdo em tempo real com linguagem nativa de social.</p>
-          <b>↗</b>
-        </a>
-      </div>
-    </section>
-
-    <section class="manifesto">
-      <div class="manifesto-small">/ NOSSO PONTO DE VISTA</div>
-      <div class="manifesto-text">
-        <span>SE TODO MUNDO</span>
-        <span>ESTÁ FAZENDO</span>
-        <span>IGUAL,</span>
-        <span class="outline">NÃO SERVE.</span>
-      </div>
-      <p>O objetivo não é parecer uma agência.<br>É parecer impossível de ignorar.</p>
-    </section>
-
-
-    <section class="compact-builder" id="orcamento">
-      <div class="compact-builder-head">
-        <div>
-          <span>/ MONTE SEU PROJETO</span>
-          <h2>Escolha. Configure.<br><em>Envie para orçamento.</em></h2>
-        </div>
-        <p>Sem preço fixo. Cada projeto é calculado conforme escopo, prazo, complexidade e horas necessárias.</p>
-      </div>
-
-      <div class="compact-builder-box">
-        <div class="compact-step">
-          <span class="compact-label">01 / SERVIÇO</span>
-          <div class="chip-list" id="serviceChips">
-            <button class="chip service-chip" data-service="Site">Site</button>
-            <button class="chip service-chip" data-service="Social Media">Social Media</button>
-            <button class="chip service-chip" data-service="Sistema">Sistema</button>
-            <button class="chip service-chip" data-service="Automação / IA">Automação / IA</button>
-            <button class="chip service-chip" data-service="Filmmaker">Filmmaker</button>
-            <button class="chip service-chip" data-service="Storymaker">Storymaker</button>
-            <button class="chip service-chip" data-service="Orientação">Não sei ainda</button>
-          </div>
-        </div>
-
-        <div class="compact-step compact-details-wrap" id="detailWrap">
-          <span class="compact-label">02 / DETALHES</span>
-          <p class="compact-hint" id="detailHint">Selecione um serviço acima.</p>
-          <div class="chip-list detail-chips" id="detailChips"></div>
-        </div>
-
-        <div class="compact-step">
-          <span class="compact-label">03 / EXECUÇÃO</span>
-          <div class="chip-list">
-            <button class="chip execution-chip" data-group="prazo" data-value="Prazo normal">Prazo normal</button>
-            <button class="chip execution-chip" data-group="prazo" data-value="Tenho urgência">Tenho urgência</button>
-            <button class="chip execution-chip" data-group="conteudo" data-value="Já tenho os materiais">Já tenho materiais</button>
-            <button class="chip execution-chip" data-group="conteudo" data-value="Quero que a NEXOR crie a estrutura e o conteúdo">NEXOR cria tudo</button>
-          </div>
-        </div>
-
-        <div class="compact-step">
-          <span class="compact-label">04 / RESUMO</span>
-          <textarea id="compactDescription" maxlength="500" placeholder="Conte rapidamente sobre sua empresa ou projeto..."></textarea>
-        </div>
-
-        <div class="compact-footer">
-          <div class="compact-status" id="compactStatus">Selecione um serviço para começar.</div>
-          <button class="compact-whatsapp" id="compactWhatsapp" disabled>
-            <span>ENVIAR PARA ORÇAMENTO</span>
-            <b>↗</b>
-          </button>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="contact" id="contact">
-      <div class="contact-top">
-        <span>/ COMEÇAR UM PROJETO</span>
-        <span>CONTATO DIRETO</span>
-      </div>
-
-      <div class="contact-main">
-        <h2>Seu próximo<br><em>nível começa aqui.</em></h2>
-
-        <div class="contact-side">
-          <p>Escolha o assunto e abra uma conversa direta com a NEXOR.</p>
-
-          <select id="serviceSelect">
-            <option value="um projeto digital">Selecione o projeto</option>
-            <option value="Social Media">Social Media</option>
-            <option value="um site">Site</option>
-            <option value="um sistema">Sistema</option>
-            <option value="automação e IA">Automação / IA</option>
-            <option value="produção audiovisual">Filmmaker / Storymaker</option>
-          </select>
-
-          <button class="contact-btn magnetic" id="contactBtn">
-            <span>FALAR COM A NEXOR</span>
-            <b>↗</b>
-          </button>
-          
-          <div class="contact-mini-cards">
-            <a class="contact-mini-card" id="whatsappLink" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da NEXOR">
-              <span class="contact-mini-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M20 11.9c0 4.6-3.8 8.4-8.4 8.4-1.5 0-2.8-.4-4.1-1L4 20l.8-3.3c-.8-1.3-1.2-3-1.2-4.7C3.6 7.4 7.4 3.6 12 3.6c4.6 0 8 3.7 8 8.3Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M9.1 8.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.5 2.4 3.7 3.2 1.8.7 2.2.5 2.6.4.4-.1 1.3-.6 1.5-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.7-.4-.4-.2-1.3-.7-1.5-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.9 1-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.5-.9-.8-1.5-1.9-1.7-2.2-.2-.3 0-.5.1-.7.1-.1.2-.3.3-.4.1-.1.1-.3.2-.4.1-.2 0-.4 0-.5-.1-.1-.5-1.4-.7-1.7Z" fill="currentColor"/>
-                </svg>
-              </span>
-              <span class="contact-mini-copy">
-                <strong>WhatsApp</strong>
-                <small>Falar agora</small>
-              </span>
-              <b>↗</b>
-            </a>
-
-            <a class="contact-mini-card" id="instagramLink" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram da NEXOR">
-              <span class="contact-mini-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <rect x="3.3" y="3.3" width="17.4" height="17.4" rx="5" stroke="currentColor" stroke-width="1.7"/>
-                  <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.7"/>
-                  <circle cx="17.5" cy="6.8" r="1.2" fill="currentColor"/>
-                </svg>
-              </span>
-              <span class="contact-mini-copy">
-                <strong>Instagram</strong>
-                <small>@nexor_digital_</small>
-              </span>
-              <b>↗</b>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-big footer-wordmark"><img src="assets/nexor-wordmark-oficial.png" alt="NEXOR." class="footer-wordmark-img" loading="lazy"></div>
-    <div class="footer-legal">
-      <a href="/privacidade.html">Privacidade</a>
-      <a href="/termos.html">Termos</a>
-    </div>
-    <div class="footer-row">
-      <span>DIGITAL STUDIO</span>
-      <span>SET. LAGOAS / MG</span>
-      <span>© 2026</span>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="header" id="inicio">
+  <a href="#inicio" class="brand" aria-label="NEXOR Digital, início"><img src="assets/nexor-wordmark-oficial.png" alt="NEXOR."></a>
+  <nav class="desktop-nav" aria-label="Navegação principal"><a href="#sobre">Sobre</a><a href="#processo">Processo</a><a href="#edicao">Edição</a><a href="#presencial">Gravação</a><a href="#extras">Extras</a><a href="#sistemas">Sistemas</a></nav>
+  <a class="header-contact" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20a%20NEXOR." target="_blank" rel="noopener noreferrer">Conversar <span aria-hidden="true">↗</span></a>
+  <button id="menuToggle" type="button" class="menu-toggle" aria-controls="mobileNav" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span></button>
+</header>
+<nav class="mobile-nav" id="mobileNav" aria-label="Navegação no celular" hidden><a href="#sobre">Sobre</a><a href="#processo">Como trabalhamos</a><a href="#edicao">Edição</a><a href="#presencial">Gravação presencial</a><a href="#extras">Serviços extras</a><a href="#sistemas">Sistemas</a><a href="#contato">Contato</a></nav>
+<main id="conteudo">
+<section class="hero section-dark" aria-labelledby="hero-title">
+ <div class="hero-content"><p class="eyebrow light">NEXOR DIGITAL <span class="rule"></span> APRESENTAÇÃO COMERCIAL · 2026</p><h1 id="hero-title">Sua marca merece<br><em>ser percebida.</em></h1><p class="hero-summary">Estratégia, conteúdo e tecnologia pensados para comunicar a essência do seu negócio — com cuidado em cada detalhe.</p><div class="hero-actions"><a class="button button-light" href="#presencial">Conhecer os pacotes <span>↗</span></a><a class="text-link light" href="#sobre">Descubra a NEXOR <span>↓</span></a></div></div>
+ <div class="hero-image"><img src="assets/nexor-equipe-direcao.webp" alt="Gabriela e Gabriel, da NEXOR Digital, trabalhando juntos" fetchpriority="high"></div>
+ <div class="hero-bottom"><span>CONTEÚDO · PRESENÇA · SOLUÇÕES</span><span>ROLE PARA EXPLORAR ↓</span></div>
+</section>
+<section class="section about" id="sobre" aria-labelledby="about-title"><div class="section-line"><span>QUEM SOMOS</span><span>UMA PARCERIA, DUAS ESPECIALIDADES</span></div><div class="two-col about-layout"><div><p class="eyebrow">SOBRE A NEXOR</p><h2 id="about-title">Pessoas por trás<br><em>de cada projeto.</em></h2></div><div class="about-copy"><p>Somos a NEXOR Digital. Gabriela transforma ideias em conteúdo e presença de marca; Gabriel desenvolve soluções tecnológicas planejadas para a rotina de cada negócio.</p><p>Trabalhamos a partir de conversas reais, de um planejamento claro e de entregas alinhadas ao que a empresa precisa neste momento.</p><div class="signature">Gabriela & Gabriel <span>— NEXOR Digital</span></div></div></div><figure class="wide-portrait"><img src="assets/nexor-equipe-colaboracao.webp" alt="Gabriela e Gabriel juntos em uma reunião de trabalho" loading="lazy"><figcaption>PROXIMIDADE NO ATENDIMENTO. INTENÇÃO NA EXECUÇÃO.</figcaption></figure></section>
+<section class="section process-section" id="processo" aria-labelledby="process-title"><div class="section-line"><span>NOSSO PROCESSO</span><span>DO PRIMEIRO CONTATO À ENTREGA</span></div><div class="section-heading"><p class="eyebrow">COMO TRABALHAMOS</p><h2 id="process-title">Tudo começa<br><em>com uma conversa.</em></h2><p>Antes de produzir, procuramos entender a sua marca, o seu momento e o que precisa ser comunicado.</p></div><div class="process-carousel" aria-label="Etapas de atendimento, deslize os cards para explorar"><div class="steps"><article><h3>Conversa</h3><p>Ouvimos sua empresa, seus objetivos e prioridades.</p></article><article><h3>Planejamento</h3><p>Definimos formato, abordagem, calendário e entregas.</p></article><article><h3>Produção</h3><p>Recebemos ou gravamos os materiais, editamos e preparamos o conteúdo.</p></article><article><h3>Acompanhamento</h3><p>Alinhamos ajustes previstos e os próximos passos.</p></article></div></div><p class="carousel-hint">ARRASTE PARA EXPLORAR <span aria-hidden="true">↔</span> · MOVIMENTO CONTÍNUO</p></section>
+<section class="section packages-section" id="edicao" aria-labelledby="edit-title"><div class="section-line"><span>CONTEÚDO À DISTÂNCIA</span><span>VOCÊ GRAVA · NÓS EDITAMOS</span></div><div class="section-heading"><p class="eyebrow">PACOTES MENSAIS</p><h2 id="edit-title">A sua rotina.<br><em>O nosso olhar.</em></h2><p>Para quem grava e envia os próprios vídeos, inclusive de outras cidades. Inclui edição, legenda, capa e uma rodada de ajustes. Não inclui gravação presencial. Carrosséis com até 5 páginas.</p></div><div class="packages-grid" id="editCards">
+<article class="package"><span class="package-label">EDIÇÃO ESSENCIAL</span><h3>O primeiro passo.</h3><p class="price">R$ 450 <small>/ mês</small></p><p class="package-detail">4 Reels <span>+</span> 2 carrosséis</p><a class="package-link" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pacote%20Edi%C3%A7%C3%A3o%20Essencial." target="_blank" rel="noopener noreferrer">Conversar sobre este pacote <span>↗</span></a></article>
+<article class="package accent"><span class="package-label">EDIÇÃO CONSTÂNCIA</span><h3>Mais continuidade.</h3><p class="price">R$ 700 <small>/ mês</small></p><p class="package-detail">8 Reels <span>+</span> 4 carrosséis</p><a class="package-link" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pacote%20Edi%C3%A7%C3%A3o%20Const%C3%A2ncia." target="_blank" rel="noopener noreferrer">Conversar sobre este pacote <span>↗</span></a></article>
+<article class="package"><span class="package-label">EDIÇÃO AUTORIDADE</span><h3>Mais espaço de marca.</h3><p class="price">R$ 950 <small>/ mês</small></p><p class="package-detail">12 Reels <span>+</span> 4 carrosséis</p><a class="package-link" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pacote%20Edi%C3%A7%C3%A3o%20Autoridade." target="_blank" rel="noopener noreferrer">Conversar sobre este pacote <span>↗</span></a></article>
+</div></section>
+<section class="section packages-section in-person" id="presencial" aria-labelledby="record-title"><div class="section-line"><span>GRAVAÇÃO PRESENCIAL</span><span>CAPTAÇÃO + EDIÇÃO</span></div><div class="section-heading"><p class="eyebrow">PACOTES MENSAIS</p><h2 id="record-title">Sua presença,<br><em>de perto.</em></h2><p>Comece por três opções para diferentes momentos do seu negócio. Se precisar de mais volume ou formatos combinados, explore as opções adicionais.</p></div><div class="packages-grid">
+<article class="package"><span class="package-label">ESSENCIAL</span><h3>Comece com intenção.</h3><p class="price">R$ 600 <small>/ mês</small></p><p class="package-detail">4 Reels</p><p class="package-support">1 gravação presencial de até <strong>2h</strong></p><a class="package-link" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20o%20pacote%20Essencial%20presencial." target="_blank" rel="noopener noreferrer">Conversar sobre este pacote <span>↗</span></a></article>
+<article class="package accent"><span class="package-label">PRESENÇA</span><h3>Estar presente importa.</h3><p class="price">R$ 850 <small>/ mês</small></p><p class="package-detail">8 Reels</p><p class="package-support">1 gravação presencial de até <strong>4h</strong></p><a class="package-link" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20o%20pacote%20Presen%C3%A7a." target="_blank" rel="noopener noreferrer">Conversar sobre este pacote <span>↗</span></a></article>
+<article class="package"><span class="package-label">CONSTÂNCIA</span><h3>Presença com ritmo.</h3><p class="price">R$ 1.200 <small>/ mês</small></p><p class="package-detail">12 Reels</p><p class="package-support">2 gravações presenciais de até <strong>3h cada</strong> ou 1 gravação de até <strong>6h</strong></p><a class="package-link" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Quero%20conversar%20sobre%20o%20pacote%20Const%C3%A2ncia%20presencial." target="_blank" rel="noopener noreferrer">Conversar sobre este pacote <span>↗</span></a></article>
+</div><button class="reveal" id="showMorePackages" type="button" aria-expanded="false" aria-controls="morePackages"><span>Conhecer os outros três formatos</span><span class="reveal-symbol" aria-hidden="true">+</span></button><div class="packages-grid extra-grid" id="morePackages" hidden>
+<article class="package"><span class="package-label">FREQUÊNCIA</span><h3>Mais volume.</h3><p class="price">R$ 1.700 <small>/ mês</small></p><p class="package-detail">20 Reels</p><p class="package-support">4 gravações presenciais de até 2h cada</p><a class="package-link" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pacote%20Frequ%C3%AAncia." target="_blank" rel="noopener noreferrer">Conversar sobre este pacote <span>↗</span></a></article>
+<article class="package"><span class="package-label">MISTO</span><h3>Vídeo + design.</h3><p class="price">R$ 1.450 <small>/ mês</small></p><p class="package-detail">8 Reels + 4 carrosséis</p><p class="package-support">2 gravações presenciais de até 2h cada</p><a class="package-link" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pacote%20Misto." target="_blank" rel="noopener noreferrer">Conversar sobre este pacote <span>↗</span></a></article>
+<article class="package"><span class="package-label">COMPLETO</span><h3>Formatos combinados.</h3><p class="price">R$ 1.650 <small>/ mês</small></p><p class="package-detail">8 Reels + 4 carrosséis + 8 sequências de Stories</p><p class="package-support">2 gravações presenciais de até 2h cada</p><a class="package-link" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pacote%20Completo." target="_blank" rel="noopener noreferrer">Conversar sobre este pacote <span>↗</span></a></article>
+</div><p class="footnote">Cada carrossel tem até 5 páginas. No Completo, cada sequência de Stories tem até 3 telas; não inclui Stories diários ilimitados.</p>
+<div class="offer"><span class="eyebrow light">CONDIÇÃO ESPECIAL DE FIM DE ANO</span><h3>Uma boa parceria<br><em>começa com clareza.</em></h3><p>Condição especial para novos contratos fechados até 31/12/2026. Válida pelos três primeiros meses. Consulte disponibilidade e condições para o seu negócio.</p><p>Depois desse período, eventual renovação ou reajuste será conversado com antecedência.</p><small>Aplicável somente aos pacotes mensais de social media apresentados acima. Não se aplica a fotografia, biosites ou sistemas.</small></div>
+</section>
+<section class="section extras-section" id="extras" aria-labelledby="extras-title"><div class="section-line"><span>SERVIÇOS EXTRAS</span><span>SOB DEMANDA</span></div><div class="section-heading"><p class="eyebrow">OUTRAS FORMAS DE CUIDAR DA MARCA</p><h2 id="extras-title">Cada detalhe<br><em>também comunica.</em></h2></div><div class="service-grid"><article class="service-card"><span>FOTOGRAFIA COM IPHONE</span><h3>Imagens para<br>mostrar sua marca.</h3><p>Fotos de equipe, bastidores, ambientes e produtos para redes sociais.</p><p class="service-price">A partir de R$ 250</p><p class="service-detail">Sessão de até 1 hora · até 15 fotos selecionadas e tratadas</p><a class="text-link" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20fotografia%20com%20iPhone." target="_blank" rel="noopener noreferrer">Consultar sessão ↗</a></article><article class="service-card"><span>BIOSITE</span><h3>Um endereço<br>para sua marca.</h3><p>Página personalizada com informações, serviços, localização e botões para WhatsApp, contato e redes sociais.</p><p class="service-price">A partir de R$ 500</p><p class="service-detail">Domínio ou serviços externos podem ser cobrados à parte.</p><a class="text-link" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20biosite." target="_blank" rel="noopener noreferrer">Consultar biosite ↗</a></article></div></section>
+<section class="section systems-section section-dark" id="sistemas" aria-labelledby="systems-title"><div class="section-line"><span>CONSULTORIA ADMINISTRATIVA</span><span>SISTEMAS SOB MEDIDA</span></div><div class="two-col systems-layout"><div><p class="eyebrow light">TECNOLOGIA PARA SUA ROTINA</p><h2 id="systems-title">Organização<br><em>com propósito.</em></h2></div><div><p>Visitamos a empresa, conversamos com a equipe e entendemos os processos que precisam de organização. A partir do diagnóstico, Gabriel planeja e desenvolve o sistema conforme o escopo contratado, define acessos e orienta pessoalmente a equipe sobre o uso.</p><p>Conforme a necessidade, o projeto pode incluir:</p></div></div><div class="modules"><span>Financeiro</span><span>Contas a pagar e a receber</span><span>Estoque</span><span>Compras</span><span>Vendas e orçamentos</span><span>Ordens de serviço</span><span>Usuários e permissões</span><span>Relatórios e controles</span></div><div class="system-prices"><article><span>SISTEMA PERSONALIZADO</span><strong>A partir de R$ 5.000</strong><p>Funções definidas após diagnóstico e levantamento do escopo.</p></article><article><span>PROJETO MAIS COMPLETO</span><strong>A partir de R$ 8.000</strong><p>Escopo maior, conforme os processos e as necessidades da empresa.</p></article></div><p class="footnote light-note">Os valores não incluem automaticamente todos os módulos. O investimento final depende do diagnóstico e escopo. Gabriela também pode fotografar produtos para auxiliar no cadastro: quantidade, condições e valor dessa etapa são definidos à parte.</p><a class="button button-light" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20um%20sistema%20personalizado%20para%20minha%20empresa." target="_blank" rel="noopener noreferrer">Conversar sobre sistemas <span>↗</span></a></section>
+<section class="section ending" id="contato" aria-labelledby="ending-title"><div class="section-line"><span>PRÓXIMO PASSO</span><span>VAMOS CONVERSAR?</span></div><p class="eyebrow">A NEXOR DIGITAL</p><h2 id="ending-title">O melhor caminho é aquele<br><em>que faz sentido para você.</em></h2><p>Conte sobre o momento da sua empresa. Vamos avaliar juntos a opção que se encaixa na sua rotina.</p><a class="button button-burgundy" href="https://wa.me/5531998261608?text=Ol%C3%A1%21%20Conheci%20a%20apresenta%C3%A7%C3%A3o%20da%20NEXOR%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer">Falar no WhatsApp <span>↗</span></a><p class="scope">Deslocamentos para outras cidades, anúncios pagos, atendimento de mensagens e trabalhos fora do escopo são combinados à parte. Nenhum pacote implica promessa de resultados comerciais.</p></section>
+</main>
+<footer class="footer"><a class="footer-logo" href="#inicio"><img src="assets/nexor-wordmark-oficial.png" alt="NEXOR."></a><div class="footer-bottom"><span>CRIATIVIDADE + TECNOLOGIA · © 2026</span><div><a href="https://instagram.com/nexor_digital_" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://wa.me/5531998261608" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a></div></div></footer>
+<script src="script.js" defer></script>
+</body></html>

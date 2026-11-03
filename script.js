@@ -1,237 +1,115 @@
+"use strict";
+const toggle = document.getElementById('menuToggle');
+const mobile = document.getElementById('mobileNav');
+function closeMenu(){mobile.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menu');}
+toggle.addEventListener('click',()=>{const opening=mobile.hidden;mobile.hidden=!opening;toggle.setAttribute('aria-expanded',String(opening));toggle.setAttribute('aria-label',opening?'Fechar menu':'Abrir menu');});
+mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!mobile.hidden){closeMenu();toggle.focus();}});
+const showMore = document.getElementById('showMorePackages');
+const more = document.getElementById('morePackages');
+showMore.addEventListener('click',()=>{const expanded=showMore.getAttribute('aria-expanded')==='true';more.hidden=expanded;showMore.setAttribute('aria-expanded',String(!expanded));showMore.querySelector('span:first-child').textContent=expanded?'Conhecer os outros três formatos':'Ocultar os três formatos adicionais';showMore.querySelector('.reveal-symbol').textContent=expanded?'+':'−';});
 
-const CONFIG = {
-  whatsappNumber: "5531998261608",
-  instagram: "nexor_digital_"
-};
-
-const loader = document.getElementById("loader");
-const loaderCount = document.getElementById("loaderCount");
-const line = document.querySelector(".loader-line i");
-let count = 0;
-const loading = setInterval(()=>{
-  count += Math.ceil(Math.random()*8);
-  if(count >= 100){
-    count = 100;
-    clearInterval(loading);
-    setTimeout(()=>loader.classList.add("hide"), 250);
+// Remove a tela de abertura ao terminar o carregamento, com fallback caso algum recurso externo demore.
+(() => {
+  const splash = document.getElementById('nexorLoader');
+  if (!splash) return;
+  const began = performance.now();
+  let removed = false;
+  function dismiss() {
+    if (removed) return;
+    removed = true;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const delay = reduced ? 0 : Math.max(0, 850 - (performance.now() - began));
+    window.setTimeout(() => {
+      splash.classList.add('is-hidden');
+      splash.setAttribute('aria-hidden','true');
+      window.setTimeout(() => splash.remove(), reduced ? 0 : 900);
+    }, delay);
   }
-  loaderCount.textContent = String(count).padStart(2,"0");
-  line.style.width = count + "%";
-}, 55);
+  if (document.readyState === 'complete') dismiss();
+  else window.addEventListener('load', dismiss, {once:true});
+  window.setTimeout(dismiss, 2200);
+})();
 
-const cursor = document.getElementById("cursor");
-window.addEventListener("pointermove", e=>{
-  cursor.style.left = e.clientX+"px";
-  cursor.style.top = e.clientY+"px";
-});
-document.querySelectorAll("a,button,.project").forEach(el=>{
-  el.addEventListener("mouseenter",()=>{cursor.style.width="42px";cursor.style.height="42px"});
-  el.addEventListener("mouseleave",()=>{cursor.style.width="10px";cursor.style.height="10px"});
-});
 
-const menu = document.getElementById("menuPanel");
-const menuTrigger = document.getElementById("menuTrigger");
-const menuClose = document.getElementById("menuClose");
-
-function openMenu(){
-  menu.classList.add("open");
-  menu.setAttribute("aria-hidden","false");
-  menuTrigger.setAttribute("aria-expanded","true");
-  menuClose.focus();
-}
-function closeMenu(){
-  menu.classList.remove("open");
-  menu.setAttribute("aria-hidden","true");
-  menuTrigger.setAttribute("aria-expanded","false");
-  menuTrigger.focus();
-}
-menuTrigger.addEventListener("click",openMenu);
-menuClose.addEventListener("click",closeMenu);
-menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
-document.addEventListener("keydown",e=>{
-  if(e.key==="Escape" && menu.classList.contains("open")) closeMenu();
-});
-
-document.querySelectorAll(".magnetic").forEach(el=>{
-  el.addEventListener("mousemove",e=>{
-    const r=el.getBoundingClientRect();
-    const x=(e.clientX-r.left-r.width/2)*.12;
-    const y=(e.clientY-r.top-r.height/2)*.12;
-    el.style.transform=`translate(${x}px,${y}px)`;
-  });
-  el.addEventListener("mouseleave",()=>el.style.transform="translate(0,0)");
-});
-
-const heroLetters=[...document.querySelectorAll(".hero-word span")];
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if(!reduceMotion){
-  window.addEventListener("pointermove",e=>{
-    if(innerWidth<900)return;
-    const nx=e.clientX/innerWidth-.5;
-    heroLetters.forEach((l,i)=>l.style.transform=`translateY(${nx*(i-2)*8}px)`);
-  });
-}
-
-const whatsappLink = document.getElementById("whatsappLink");
-const instagramLink = document.getElementById("instagramLink");
-if(whatsappLink) whatsappLink.href = `https://wa.me/${CONFIG.whatsappNumber}`;
-if(instagramLink) instagramLink.href = `https://instagram.com/${CONFIG.instagram}`;
-
-function trackConversion(name, detail={}){
-  window.dispatchEvent(new CustomEvent("nexor:conversion",{detail:{name,...detail}}));
-}
-
-document.getElementById("contactBtn").addEventListener("click",()=>{
-  const service=document.getElementById("serviceSelect").value;
-  const msg=`Olá! Vim pelo site da NEXOR e gostaria de falar sobre ${service}.`;
-  trackConversion("contact_whatsapp",{service});
-  window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`,"_blank","noopener,noreferrer");
-});
-
-/* Compact project configurator */
-const DETAIL_OPTIONS = {
-  "Site": [
-    "Institucional","Landing Page","Catálogo","E-commerce","Portfólio",
-    "One page","Várias páginas","Hero fixo","Hero carrossel","Hero vídeo",
-    "Hero animado","WhatsApp","Instagram","Formulário","Painel admin",
-    "Catálogo editável","Login","Integrações","Luxo","Minimalista","Hi-tech"
-  ],
-  "Social Media": [
-    "Gestão completa","Só criação","Estratégia","Posts","Carrosséis","Reels",
-    "Stories","Captação","Edição","Roteiros","Calendário","Identidade visual"
-  ],
-  "Sistema": [
-    "Sistema web","Painel admin","Login","Níveis de acesso","Banco de dados",
-    "Relatórios","Dashboard","Cadastros","Estoque","Financeiro","Agenda",
-    "WhatsApp","API","Integrações"
-  ],
-  "Automação / IA": [
-    "Atendimento","Conteúdo","Tarefas internas","Análise de dados","Agente IA",
-    "Textos e roteiros","WhatsApp","Integrações","Painel","Banco de dados"
-  ],
-  "Filmmaker": [
-    "Vertical","Horizontal","Campanha","Institucional","Reels","Entrevista",
-    "Produto","Edição","Legendas","Trilha","Vários cortes","Direção de roteiro"
-  ],
-  "Storymaker": [
-    "Evento","Inauguração","Bastidores","Lançamento","Rotina","Stories ao vivo",
-    "Reels rápidos","Fotos","Depoimentos","Melhores momentos"
-  ],
-  "Orientação": [
-    "Quero vender mais","Melhorar minha imagem","Preciso de um site",
-    "Organizar processos","Automatizar tarefas","Produzir conteúdo","Divulgar produto"
-  ]
-};
-
-const compactState = {
-  service:"",
-  details:[],
-  execution:{},
-  description:""
-};
-
-const serviceChips = [...document.querySelectorAll(".service-chip")];
-const detailChips = document.getElementById("detailChips");
-const detailHint = document.getElementById("detailHint");
-const desc = document.getElementById("compactDescription");
-const status = document.getElementById("compactStatus");
-const waBtn = document.getElementById("compactWhatsapp");
-
-function updateCompact(){
-  compactState.description = desc.value.trim();
-  waBtn.disabled = !compactState.service;
-  const count = compactState.details.length;
-  status.textContent = compactState.service
-    ? `${compactState.service} selecionado · ${count} opção${count===1?"":"ões"} marcada${count===1?"":"s"}.`
-    : "Selecione um serviço para começar.";
-}
-
-function renderDetails(service){
-  detailChips.innerHTML="";
-  compactState.details=[];
-  const opts = DETAIL_OPTIONS[service] || [];
-  detailHint.textContent = opts.length ? "Marque apenas o que fizer sentido." : "Selecione um serviço acima.";
-  opts.forEach(label=>{
-    const b=document.createElement("button");
-    b.className="chip detail-chip";
-    b.textContent=label;
-    b.addEventListener("click",()=>{
-      b.classList.toggle("selected");
-      if(b.classList.contains("selected")){
-        compactState.details.push(label);
-      }else{
-        compactState.details=compactState.details.filter(x=>x!==label);
-      }
-      updateCompact();
+// Cards de processo: rolagem automática contínua, com arraste pelo mouse ou toque.
+// Em movimento reduzido, os cards são exibidos sem animação e continuam acessíveis.
+(() => {
+  const viewport = document.querySelector('.process-carousel');
+  const track = viewport?.querySelector('.steps');
+  if (!viewport || !track) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const originals = Array.from(track.children);
+  if (!originals.length) return;
+  let offset = 0, width = 1, last = 0, dragging = false, dragStartX = 0, dragStartOffset = 0, frame = 0;
+  let focused = false, inView = true;
+  function size() {
+    // A segunda cópia começa exatamente uma volta depois da primeira.
+    width = track.children[originals.length]?.offsetLeft - originals[0].offsetLeft || 1;
+    offset = ((offset % width) + width) % width;
+    paint();
+  }
+  function paint() { track.style.transform = `translate3d(${-offset}px,0,0)`; }
+  if (!reduced.matches) {
+    originals.forEach((el) => {
+      const clone = el.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.setAttribute('inert', '');
+      track.appendChild(clone);
     });
-    detailChips.appendChild(b);
-  });
-}
-
-serviceChips.forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    serviceChips.forEach(x=>x.classList.remove("selected"));
-    btn.classList.add("selected");
-    compactState.service=btn.dataset.service;
-    renderDetails(compactState.service);
-    updateCompact();
-  });
-});
-
-document.querySelectorAll(".execution-chip").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    const group=btn.dataset.group;
-    document.querySelectorAll(`.execution-chip[data-group="${group}"]`).forEach(x=>x.classList.remove("selected"));
-    btn.classList.add("selected");
-    compactState.execution[group]=btn.dataset.value;
-    updateCompact();
-  });
-});
-
-desc.addEventListener("input", updateCompact);
-
-waBtn.addEventListener("click",()=>{
-  const details = compactState.details.length
-    ? compactState.details.map(x=>`• ${x}`).join("\n")
-    : "• A definir";
-
-  const execution = Object.values(compactState.execution).length
-    ? Object.values(compactState.execution).map(x=>`• ${x}`).join("\n")
-    : "• A definir";
-
-  const message = `Olá, NEXOR! Montei meu projeto pelo site e gostaria de receber um orçamento.
-
-SERVIÇO
-${compactState.service}
-
-OPÇÕES SELECIONADAS
-${details}
-
-EXECUÇÃO
-${execution}
-
-SOBRE O PROJETO
-${compactState.description || "Prefiro explicar durante o atendimento."}
-
-Entendi que os valores são sob consulta e dependem do escopo, prazo, complexidade e horas necessárias.`;
-
-  window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`,"_blank");
-});
-
-/* Preselect compact builder from service list */
-document.querySelectorAll(".service-row").forEach(row=>{
-  row.addEventListener("click",()=>{
-    const title=row.querySelector("h3")?.textContent.trim();
-    const map={"Social Media":"Social Media","Sites":"Site","Sistemas":"Sistema","Filmmaker":"Filmmaker","Storymaker":"Storymaker"};
-    const target=map[title];
-    if(target){
-      setTimeout(()=>document.querySelector(`.service-chip[data-service="${target}"]`)?.click(),200);
+  }
+  const normalize = n => ((n % width) + width) % width;
+  function tick(now) {
+    if (last && !dragging && !focused && inView && !reduced.matches) {
+      offset = normalize(offset + Math.min(now - last, 40) * 0.035);
+      paint();
     }
+    last = now;
+    frame = requestAnimationFrame(tick);
+  }
+  viewport.addEventListener('pointerdown', e => {
+    if (reduced.matches || e.button !== 0) return;
+    dragging = true; dragStartX = e.clientX; dragStartOffset = offset;
+    viewport.classList.add('is-dragging');
+    viewport.setPointerCapture(e.pointerId);
   });
-});
+  viewport.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    offset = normalize(dragStartOffset - (e.clientX - dragStartX));
+    paint();
+  });
+  function endDrag() { dragging = false; viewport.classList.remove('is-dragging'); }
+  viewport.addEventListener('pointerup', endDrag);
+  viewport.addEventListener('pointercancel', endDrag);
+  viewport.addEventListener('lostpointercapture', endDrag);
+  viewport.addEventListener('focusin', () => focused = true);
+  viewport.addEventListener('focusout', e => { if (!viewport.contains(e.relatedTarget)) focused = false; });
+  viewport.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    e.preventDefault(); offset = normalize(offset + (e.key === 'ArrowRight' ? 180 : -180)); paint();
+  });
+  viewport.tabIndex = 0;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => { inView = entries[0].isIntersecting; }, {threshold:.01}).observe(viewport);
+  }
+  window.addEventListener('resize', size, {passive:true});
+  if (document.fonts?.ready) document.fonts.ready.then(size);
+  size(); frame = requestAnimationFrame(tick);
+  window.addEventListener('pagehide', () => cancelAnimationFrame(frame), {once:true});
+})();
 
-updateCompact();
-
-
-if(whatsappLink) whatsappLink.addEventListener("click",()=>trackConversion("whatsapp_card"));
-if(instagramLink) instagramLink.addEventListener("click",()=>trackConversion("instagram_card"));
+// Revelações sutis nas seções, fotografias e demais cartões.
+(() => {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !('IntersectionObserver' in window)) return;
+  const elements = document.querySelectorAll('.section-heading, .about-layout, .wide-portrait, .package, .service-card, .system-prices article, .offer, .ending h2');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, {threshold:0.06, rootMargin:'0px 0px 65px 0px'});
+  elements.forEach(el => {el.classList.add('motion-reveal');observer.observe(el);});
+  document.documentElement.classList.add('js-motion');
+})();
